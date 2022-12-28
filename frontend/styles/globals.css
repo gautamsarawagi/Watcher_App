@@ -1,0 +1,29 @@
+/* fonts: Rubik 300 400 500 700 800, Playfair Display 400 700, Work Sans 100 500, Lato 400 700, Inter 400, JetBrains Mono 400 700 */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Rubik:wght@300;400;500;700;800&family=Work+Sans:wght@100;500&family=JetBrains+Mono:wght@400;700&display=swap");
+
+* {
+  color: black;
+}
+
+body {
+  min-width: 930px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Hide Scrollbars */
+
+* {
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-moz-scrollbar {
+  display: none;
+}

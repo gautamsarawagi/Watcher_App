@@ -46,6 +46,7 @@ function Contact({}: Props) {
               fullWidth
               inputProps={{ style: { color: "#FFFFFF" } }}
               multiline
+              rows={1}
               maxRows={2}
               sx={{
                 background: "#34353A",
@@ -72,6 +73,7 @@ function Contact({}: Props) {
               id="margin-none"
               fullWidth
               multiline
+              rows={1}
               maxRows={2}
               inputProps={{ style: { color: "#FFFFFF" } }}
               sx={{

@@ -1,0 +1,28 @@
+import React from "react";
+import Head from "next/head";
+import CriminalDetectionLayout from "../layout/CriminalDetectionLayout";
+import HomeStyles from "../styles/Home.module.css";
+import Box from "@mui/material/Box";
+import CriminalFaceDetection from "../features/Criminals/CriminalFaceDetection";
+
+function Criminal_detection() {  
+  
+  return (
+    <>
+      <Head>
+        <title>Watcher App | Criminals </title>
+        <meta name="description" content="Watcher Police help Web App" />
+        <meta name="viewport" content="width=1200, minimum-scale=0.25" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Box className={HomeStyles.body}>
+    <CriminalDetectionLayout>
+      <CriminalFaceDetection/>
+    </CriminalDetectionLayout>
+        </Box>
+    </>
+  );
+}
+
+export default Criminal_detection;

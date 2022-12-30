@@ -2,10 +2,13 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Link from "next/link";
 
 type Props = {};
 
 function Headline({}: Props) {
+
+
   return (
     <>
       <Typography
@@ -34,6 +37,7 @@ function Headline({}: Props) {
       </Typography>
 
       <Box sx={{ display: "flex", justifyContent: "center",marginTop:'29px' }}>
+        <Link href="/vehicle">
         <Button sx={{width:'280px',height:"64px",border:'1px solid #008DFF',borderRadius:'10px',background:'#008DFF'}}>
         <Typography
         fontFamily={"Poppins"}
@@ -46,6 +50,8 @@ function Headline({}: Props) {
        Login
       </Typography>
         </Button>
+        </Link>
+        
       </Box>
     </>
   );

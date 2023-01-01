@@ -27,10 +27,15 @@ const CriminalFaceDetection = () => {
     {
       pictureScreenshot ? setPicture(pictureScreenshot) : null;
     }
-
-    router.push({
-      pathname : "/criminal/CriminalDescription"
-    })
+    router.push(
+      {
+        pathname: "/criminal/CriminalDescription",
+        query: {
+          image: pictureScreenshot,
+        },
+      },
+      "/criminal/CriminalDescription"
+    );
   };
 
   return (

@@ -67,6 +67,7 @@ function Tracks({}: Props) {
                   alignItems: "center",
                   justifyContent:'center'
                 }}
+                key={index}
               >
                 <Image
                   src={item.image}

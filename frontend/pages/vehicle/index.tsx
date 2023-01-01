@@ -3,7 +3,7 @@ import Head from "next/head";
 import VehicleTestingLayout from '../../layout/VehicleTestingLayout'
 import HomeStyles from "../../styles/Home.module.css"
 import Box from "@mui/material/Box"
-import LocationMap from '../../features/Vehicles/LocationMap'
+import LocationMap from './LocationMap'
 
 function Vehicle_testing() {
   

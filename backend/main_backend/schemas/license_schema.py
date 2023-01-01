@@ -5,7 +5,10 @@ def license_searilizer(license) -> dict:
         "model": license["model"],
         "color": license["color"],
         "lastLocation": license["lastLocation"],
-        "dateOfTheft": license["dateOfTheft"]
+        "dateOfTheft": license["dateOfTheft"],
+        "latitude": license["latitude"],
+        "longitude": license["longitude"],
+        "complete_status": license["complete_status"]
     }
 
 def licenses_searilizer(licenses) -> list:

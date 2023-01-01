@@ -12,9 +12,9 @@ import Image, { StaticImageData } from "next/image";
 import Box from "@mui/material/Box";
 import { drawer_links } from "./drawerlinks";
 import watcher from "../../assets/drawer_icon.png";
-import LicensePopover from "./popovers/LicensePopover";
-import CriminalPopover from "./popovers/CriminalPopover";
-import TheftsPopover from "./popovers/TheftsPopover";
+import LicensePopoverTabs from "./popovers/license/LicensePopover";
+import CriminalPopover from "./popovers/criminal/CriminalPopover";
+import TheftsPopover from "./popovers/thefts/TheftsPopover";
 
 import { useRouter } from "next/router";
 
@@ -175,7 +175,7 @@ function NavbarDrawer() {
 
       <Box>
         {activeTab == "Track Vehicles" ? (
-          <LicensePopover
+          <LicensePopoverTabs
             anchorEl={anchorEl}
             setAnchorEl={setAnchorEl}
             id={id_popover}

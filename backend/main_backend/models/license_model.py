@@ -6,3 +6,6 @@ class License(BaseModel):
     color:str
     lastLocation: str
     dateOfTheft:object
+    latitude:str
+    longitude:str
+    complete_status:str

@@ -1,9 +1,7 @@
 import { Container, Stack ,Box} from "@mui/system";
 import { useInView } from "react-intersection-observer";
-import { BrandInViewContext } from "../contexts/HeaderContext";
 import { ReactNode } from "react";
 import NavbarDrawer from "../features/All_Models/NavbarDrawer"
-import { useState } from "react";
 
 type Props = {
   children?: ReactNode;
@@ -14,7 +12,6 @@ function VehicleTestingLayout({ children }: Props) {
 
   return (
     <Stack>
-      <BrandInViewContext.Provider value={{ inView }}>
       <Box sx={{ display: 'flex' }}>
 
         <NavbarDrawer/>
@@ -22,7 +19,6 @@ function VehicleTestingLayout({ children }: Props) {
           <Stack>{children}</Stack>
         </Container>
       </Box>
-      </BrandInViewContext.Provider>
     </Stack>
   )
 }

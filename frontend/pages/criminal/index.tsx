@@ -1,12 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import CriminalDetectionLayout from "../../layout/CriminalDetectionLayout";
-import HomeStyles from "../../styles/Home.module.css"
+import HomeStyles from "../../styles/Home.module.css";
 import Box from "@mui/material/Box";
 import CriminalFaceDetection from "../../features/Criminals/CriminalFaceDetection";
 
-function Criminal_detection() {  
-  
+function Criminal_detection() {
   return (
     <>
       <Head>
@@ -17,10 +16,10 @@ function Criminal_detection() {
       </Head>
 
       <Box className={HomeStyles.body}>
-    <CriminalDetectionLayout>
-      <CriminalFaceDetection/>
-    </CriminalDetectionLayout>
-        </Box>
+        <CriminalDetectionLayout>
+          <CriminalFaceDetection />
+        </CriminalDetectionLayout>
+      </Box>
     </>
   );
 }

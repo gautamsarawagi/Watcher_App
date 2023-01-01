@@ -38,6 +38,7 @@ function Header() {
                     lineHeight={"48px"}
                     color={"#FFFFFF"}
                     sx={{cursor:'pointer'}}
+                    key={index}
                   >
                     {item.name}
                   </Typography>

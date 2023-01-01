@@ -2,10 +2,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Rubik:wght@300;400;500;700;800&family=Work+Sans:wght@100;500&family=JetBrains+Mono:wght@400;700&display=swap");
 
-* {
-  color: black;
-}
-
 body {
   min-width: 930px;
 }

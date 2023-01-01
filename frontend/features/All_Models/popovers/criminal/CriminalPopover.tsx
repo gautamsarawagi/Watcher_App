@@ -5,6 +5,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Image from "next/image";
+import {useRouter} from "next/router"
 
 function CriminalPopover({
   anchorEl,
@@ -18,6 +19,7 @@ function CriminalPopover({
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const router = useRouter();
 
   const open = Boolean(anchorEl);
 
@@ -39,7 +41,17 @@ function CriminalPopover({
     };
   };
 
-  const uploadImage = () => {};
+  const uploadImage = () => {
+    router.push(
+      {
+        pathname: "/criminal/CriminalDescription",
+        query: {
+          image: filePreview,
+        },
+      },
+      "/criminal/CriminalDescription"
+    );
+  };
 
   return (
     <>
@@ -187,6 +199,8 @@ function CriminalPopover({
                 width: "462px",
                 height: "64px",
               }}
+              onClick={uploadImage}
+
             >
               <Typography
                 fontFamily={"Poppins"}
@@ -195,7 +209,6 @@ function CriminalPopover({
                 fontSize={"32px"}
                 lineHeight={"48px"}
                 color={"#FFFFFF"}
-                onClick={uploadImage}
               >
                 Track
               </Typography>

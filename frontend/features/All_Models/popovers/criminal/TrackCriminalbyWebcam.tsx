@@ -7,9 +7,9 @@ import Webcam from "react-webcam";
 import axios from "axios"
 import MessageTooltip from "../../../MessageTooltip";
 
-function TrackComplaintWebcam() {
+function TrackCriminalbyWebcam() {
   const [allowCamera, setAllowCamera] = useState(false);
-  const [licenseNumber, setLicenseNumber] = useState("Undefined")
+  const [criminalName, setCriminalName] = useState("Undefined")
 
   // camera functions
 
@@ -32,35 +32,28 @@ function TrackComplaintWebcam() {
       pictureScreenshot ? setPicture(pictureScreenshot) : null;
     }
 
-    setLicenseNumber("Loading...");
+    setCriminalName("Loading...");
   };
 
   const [openTooltip,setOpenTooltip] = useState(false)
-
-  const [response,setResponse] = useState({})
+  const [tooltipMsg,setTooltipMsg] = useState({})
 
   useEffect(() => {
     if(picture.length > 0){
-      let axiosConfig = {
-         headers : {
-          'Authorization': process.env.PLATERECOGNIZER_TOKEN
-        }    
-      }
       const body = {
-        "regions": ["mx"],
-        "upload":  picture
+        "image":  picture
       }
 
-      axios.post('https://api.platerecognizer.com/v1/plate-reader/',body,axiosConfig)
+      axios.post('http://127.0.0.1:8000/image_match',body)
       .then((res) => {
         setOpenTooltip(true)
-        if(res.data.results[0]){
-          setResponse({"Status":"success","msg": "license plate detected"})
-        setLicenseNumber(res?.data?.results[0]?.plate)
+        if(res.data.data){
+          setCriminalName(res?.data?.data?.criminal_name)
         }else{
-          setResponse({"Status":"error","msg": "license plate not detected"})
-        setLicenseNumber("Not Found")
+          setCriminalName("Not Found")
         }
+        setTooltipMsg(res.data)
+        console.log(res.data)
       })
       .catch((err) => {
         console.log("AXIOS ERROR: ", err);
@@ -97,12 +90,12 @@ function TrackComplaintWebcam() {
         fontFamily={"Inter"}
         fontStyle={"SemiBold"}
         fontWeight={"600"}
-        fontSize={"32px"}
+        fontSize={"28px"}
         lineHeight={"39px"}
         color={"#008DFF"}
         sx={{ marginTop: "16px" }}
       >
-        License Plate : {licenseNumber}
+        Criminal Name : {criminalName}
       </Typography>
 
       {!allowCamera ? (
@@ -197,9 +190,9 @@ function TrackComplaintWebcam() {
         </Box>
       )}
 
-      <MessageTooltip openTooltip = {openTooltip} setOpenTooltip={setOpenTooltip} message={response}/>
+      <MessageTooltip openTooltip = {openTooltip} setOpenTooltip={setOpenTooltip} message={tooltipMsg}/>
     </>
   );
 }
 
-export default TrackComplaintWebcam;
+export default TrackCriminalbyWebcam;

@@ -1,4 +1,4 @@
-import  React,{useState} from "react";
+import React, { useState } from "react";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -15,7 +15,6 @@ function TheftsPopover({
   setAnchorEl: any;
   id: any;
 }) {
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -23,28 +22,25 @@ function TheftsPopover({
   const open = Boolean(anchorEl);
 
   const color = "";
-  
-  const [licenseForm,setLicenseForm] = useState({
-      licenseNo : "",
-      carModel : "",
-      carColor : "",
-      lastLocation : "",
-      dateandtime : ""
-  })
+
+  const [licenseForm, setLicenseForm] = useState({
+    licenseNo: "",
+    carModel: "",
+    carColor: "",
+    lastLocation: "",
+    dateandtime: "",
+  });
 
   const handleInputs = (e: {
-    [x: string]: any; target: { name: any; value: any; }; 
-}) => {
+    [x: string]: any;
+    target: { name: any; value: any };
+  }) => {
     if (e.target) {
-      setLicenseForm({...licenseForm, [e.target.name]:e.target.value})
+      setLicenseForm({ ...licenseForm, [e.target.name]: e.target.value });
     } else {
-      setLicenseForm({...licenseForm, dateandtime: e.$d})
+      setLicenseForm({ ...licenseForm, dateandtime: e.$d });
     }
-  }
-
-  const formSubmitHandler =  () => {
-    console.log(licenseForm)
-  }
+  };
 
   return (
     <>
@@ -67,7 +63,7 @@ function TheftsPopover({
           left: 66,
         }}
       >
-        <Box sx={{ background: "#202126" }}>
+        <Box sx={{ background: "#202126", height: "100vh" }}>
           <Box
             sx={{
               display: "flex",
@@ -76,11 +72,11 @@ function TheftsPopover({
               columnGap: "13px",
               px: 3,
               paddingTop: "19px",
-              color:'white'
+              color: "white",
             }}
           >
             <KeyboardBackspaceIcon
-              sx={{svg: { color },cursor: "pointer" }}
+              sx={{ svg: { color }, cursor: "pointer" }}
               onClick={handleClose}
             />
             <Typography
@@ -209,7 +205,7 @@ function TheftsPopover({
             />
           </Box>
 
-              {/* last location */}
+          {/* last location */}
 
           <Box sx={{ marginTop: "20px", px: 3 }}>
             <Typography
@@ -248,7 +244,6 @@ function TheftsPopover({
               justifyContent: "center",
               marginTop: "33px",
               px: 3,
-              pb: 3,
             }}
           >
             <Button
@@ -259,8 +254,6 @@ function TheftsPopover({
                 width: "462px",
                 height: "64px",
               }}
-              
-              onClick={formSubmitHandler}
             >
               <Typography
                 fontFamily={"Poppins"}

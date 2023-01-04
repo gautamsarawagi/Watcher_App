@@ -12,8 +12,6 @@ function PreviousLicenses() {
     });
   }, []);
 
-  console.log(data);
-
   return (
     <>
       {data.length > 0 ? (

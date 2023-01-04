@@ -67,7 +67,7 @@ function NavbarDrawer() {
   const router = useRouter();
 
   const [open, setOpen] = useState(false);
-  const [activeTab,setActiveTab] = useState("Vehicle_testing")
+  const [activeTab, setActiveTab] = useState("Vehicle_testing");
 
   const handleDrawer = () => {
     setOpen(!open);
@@ -81,13 +81,15 @@ function NavbarDrawer() {
   };
 
   const handleModels = (data: {
-    path: URL; name: any; image?: StaticImageData 
-}) => {
-  setActiveTab(data.name)
+    path: URL;
+    name: any;
+    image?: StaticImageData;
+  }) => {
+    setActiveTab(data.name);
     router.push({
       pathname: `${data.path}`,
-      query: {activeTab: data.name}
-    })
+      query: { activeTab: data.name },
+    });
   };
 
   return (

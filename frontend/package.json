@@ -23,11 +23,15 @@
     "dayjs": "^1.11.7",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "mapbox-gl": "^2.11.1",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.1",
     "react-webcam": "^7.0.1",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "@types/mapbox-gl": "^2.7.10"
   }
 }

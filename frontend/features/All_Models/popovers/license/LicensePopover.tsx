@@ -9,7 +9,6 @@ import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
-import PreviousLicenses from "./PreviousLicenses";
 import TrackComplaint from "./TrackComplaint";
 
 function LicensePopover({
@@ -38,6 +37,7 @@ function LicensePopover({
       <Popover
         id={id}
         open={open}
+        onClose={handleClose}
         anchorReference="anchorPosition"
         anchorEl={anchorEl}
         anchorOrigin={{
@@ -53,7 +53,7 @@ function LicensePopover({
           left: 66,
         }}
       >
-        <Box sx={{ background: "#202126", width: "529px" }}>
+        <Box sx={{ background: "#202126", width: "529px",height:'100vh' }}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <Box
@@ -103,17 +103,17 @@ function LicensePopover({
                   Track Vehicle
                 </Typography>
               </Box>
-              <TabList onChange={handleChange} indicatorColor="primary">
-                <Tab label="File a Complaint" value="1" />
-                <Tab label="Track a Complaint" value="2" />
+              <TabList onChange={handleChange} indicatorColor="primary" >
+                <Tab label="File a Complaint" value="1" sx={{color:'#FFFFFF'}}/>
+                <Tab label="Track a Complaint" value="2" sx={{color:'#FFFFFF'}}/>
               </TabList>
             </Box>
 
-            <TabPanel value="1">
+            <TabPanel value="1" sx={{py:0}}>
               <LicenseAddFrom handleClose={handleClose} />
             </TabPanel>
 
-            <TabPanel value="2">
+            <TabPanel value="2" sx={{py:0}}>
               <TrackComplaint />
             </TabPanel>
           </TabContext>

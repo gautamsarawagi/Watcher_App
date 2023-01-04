@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import CriminalDetectionLayout from "../layout/CriminalDetectionLayout";
+import ModelLayout from "../layout/ModelLayout";
 import HomeStyles from "../styles/Home.module.css";
 import Box from "@mui/material/Box";
 import CriminalFaceDetection from "../features/Criminals/CriminalFaceDetection";
@@ -16,9 +16,9 @@ function Criminal_detection() {
       </Head>
 
       <Box className={HomeStyles.body}>
-        <CriminalDetectionLayout>
+        <ModelLayout>
           <CriminalFaceDetection />
-        </CriminalDetectionLayout>
+        </ModelLayout>
       </Box>
     </>
   );

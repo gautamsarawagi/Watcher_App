@@ -9,44 +9,27 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import MessageTooltip from "../../../MessageTooltip";
 
-function TrackComplaintPlateNo() {
+function TrackCriminalbyName() {
 
     const router = useRouter();
-    const [licenseNo, setLicenseNo] = useState("");
-    const [datafromlicense, setDatafromlicense] = useState<any[]>([])
+    const [criminalName, setCriminalName] = useState("");
 
     const [openTooltip,setOpenTooltip] = useState(false)
     const [tooltipMsg,setTooltipMsg] = useState({})
-    
+
     const viewdatainmap = async () => {
-      const result = await axios
-        .get(`http://127.0.0.1:8000/license/${licenseNo}`)
+        const result = await axios
+        .get(`http://127.0.0.1:8000/criminal/${criminalName}`)
         .then((res) => {
           setTooltipMsg(res.data)
           setOpenTooltip(true)
-          setDatafromlicense(res.data.data);
-        });
-    };
-
-    useEffect(() => {
-      if(datafromlicense?.length == 1){
-        router.push(
-          {
-            pathname: "/vehicle/LocationMap",
-            query: {
-              latitude: datafromlicense[0]?.latitude,
-              longitude: datafromlicense[0]?.longitude,
-            },
-          },
-        );
-
-      }
-    }, [datafromlicense, router])
-    
+        })
+        .catch((err) => console.log(err))
+    }
 
   return (
     <>
-      <Typography
+    <Typography
         fontFamily={"Inter"}
         fontStyle={"SemiBold"}
         fontSize={"40px"}
@@ -55,7 +38,7 @@ function TrackComplaintPlateNo() {
         fontWeight={"600"}
         sx={{ marginTop: "16px" }}
       >
-        Welcome to Track V
+        Welcome to Track C
       </Typography>
 
       <Typography
@@ -67,7 +50,7 @@ function TrackComplaintPlateNo() {
         fontWeight={"400"}
         sx={{ marginTop: "8px" }}
       >
-        For Using map Feature please use the following license plate : CG123456
+        For Using map Feature please use the following Criminal Name : ABCD
       </Typography>
 
       <TextField
@@ -82,16 +65,16 @@ function TrackComplaintPlateNo() {
             </InputAdornment>
           ),
         }}
-        name={"licensenumber"}
-        value={licenseNo}
-        onChange={(e) => setLicenseNo(e.target.value)}
+        name={"criminal_name"}
+        value={criminalName}
+        onChange={(e) => setCriminalName(e.target.value)}
         sx={{
           background: "#34353A",
           border: "0.2px solid #34353A",
           borderRadius: "8px",
           marginTop: "28px",
         }}
-        placeholder="Enter license plate "
+        placeholder="Enter Criminal Name "
       />
 
       <Button
@@ -119,7 +102,7 @@ function TrackComplaintPlateNo() {
 
       <MessageTooltip openTooltip = {openTooltip} setOpenTooltip={setOpenTooltip} message={tooltipMsg}/>
     </>
-  );
+  )
 }
 
-export default TrackComplaintPlateNo;
+export default TrackCriminalbyName

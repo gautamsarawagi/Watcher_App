@@ -1,11 +1,14 @@
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Image from "next/image";
-import {useRouter} from "next/router"
+import TrackCriminal from "./TrackCriminal";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import AddCriminalForm from "./AddCriminalForm";
 
 function CriminalPopover({
   anchorEl,
@@ -16,41 +19,17 @@ function CriminalPopover({
   setAnchorEl: any;
   id: any;
 }) {
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const router = useRouter();
 
   const open = Boolean(anchorEl);
 
-  const [file, setFile] = useState<any>(null);
-  const [filePreview, setFilePreview] = useState(null);
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-
-    if (!event.target.files) return;
-
-    setFile(event.target.files[0]);
-
-    const reader = new FileReader();
-
-    event.target.files instanceof FileList ? reader.readAsDataURL(event.target.files[0]) : 'handle exception'
-
-    reader.onload = (readerEvent) => {
-      setFilePreview(readerEvent.target.result);
-    };
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
-  const uploadImage = () => {
-    router.push(
-      {
-        pathname: "/criminal/CriminalDescription",
-        query: {
-          image: filePreview,
-        },
-      },
-      "/criminal/CriminalDescription"
-    );
+  const [value, setValue] = React.useState("1");
+
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
   };
 
   return (
@@ -74,146 +53,70 @@ function CriminalPopover({
           left: 66,
         }}
       >
-        <Box sx={{ background: "#202126" }}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              columnGap: "13px",
-              px: 3,
-              paddingTop: "19px",
-              color: "white",
-            }}
-          >
-            <KeyboardBackspaceIcon
-              sx={{ cursor: "pointer" }}
-              onClick={handleClose}
-            />
-            <Typography
-              fontFamily={"Poppins"}
-              fontStyle={"Regular"}
-              fontSize={"24px"}
-              lineHeight={"36px"}
-              color={"#FFFFFF"}
-            >
-              Back
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              background: "#34353A",
-              width: "100%",
-              height: "80px",
-              display: "flex",
-              alignItems: "center",
-              px: 3,
-              marginTop: "11px",
-            }}
-          >
-            <Typography
-              fontFamily={"Poppins"}
-              fontStyle={"SemiBold"}
-              fontSize={"32px"}
-              lineHeight={"48px"}
-              color={"#FFFFFF"}
-            >
-              Track Criminal
-            </Typography>
-          </Box>
-
-          {/* Upload the image */}
-
-          <Box sx={{ marginTop: "45px", px: 3 }}>
-            <Typography
-              fontFamily={"Poppins"}
-              fontStyle={"Medium"}
-              fontSize={"24px"}
-              lineHeight={"36px"}
-              color={"#FFFFFF"}
-            >
-              Upload the Image here
-            </Typography>
-
-            <Button
-              component="label"
-              sx={{
-                border: "1px solid #008DFF",
-                borderRadius: "10px",
-                background: "#008DFF",
-                width: "462px",
-                height: "32px",
-                marginTop: "16px",
-              }}
-            >
-              Upload File
-              <input type="file" onChange={handleChange} hidden />
-            </Button>
-          </Box>
-
-          <Typography
-            fontFamily={"Poppins"}
-            fontStyle={"Medium"}
-            fontSize={"24px"}
-            lineHeight={"36px"}
-            color={"#FFFFFF"}
-            sx={{ px: 3, marginTop: "15px" }}
-          >
-            File Uploaded : {file ? file.name : "No file choosen"}
-          </Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "33px",
-              px: 3,
-              pb: 3,
-            }}
-          >
-            {filePreview != null && (
-              <Image
-                src={filePreview}
-                alt={file?.name}
-                width={100}
-                height={100}
-              />
-            )}
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "33px",
-              px: 3,
-              pb: 3,
-            }}
-          >
-            <Button
-              sx={{
-                border: "1px solid #008DFF",
-                borderRadius: "10px",
-                background: "#008DFF",
-                width: "462px",
-                height: "64px",
-              }}
-              onClick={uploadImage}
-
-            >
-              <Typography
-                fontFamily={"Poppins"}
-                fontStyle={"SemiBold"}
-                fontWeight={"600"}
-                fontSize={"32px"}
-                lineHeight={"48px"}
-                color={"#FFFFFF"}
+        <Box sx={{ background: "#202126",width: "529px",height:'100vh' }}>
+        <TabContext value={value}>
+            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  columnGap: "13px",
+                  px: 3,
+                  paddingTop: "19px",
+                  color: "white",
+                }}
               >
-                Track
-              </Typography>
-            </Button>
-          </Box>
+                <KeyboardBackspaceIcon
+                  sx={{ cursor: "pointer" }}
+                  onClick={handleClose}
+                />
+                <Typography
+                  fontFamily={"Poppins"}
+                  fontStyle={"Regular"}
+                  fontSize={"24px"}
+                  lineHeight={"36px"}
+                  color={"#FFFFFF"}
+                >
+                  Back
+                </Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  background: "#34353A",
+                  width: "100%",
+                  height: "80px",
+                  display: "flex",
+                  alignItems: "center",
+                  px: 3,
+                  marginTop: "11px",
+                }}
+              >
+                <Typography
+                  fontFamily={"Poppins"}
+                  fontStyle={"SemiBold"}
+                  fontSize={"32px"}
+                  lineHeight={"48px"}
+                  color={"#FFFFFF"}
+                >
+                  Track Criminal
+                </Typography>
+              </Box>
+              <TabList onChange={handleChange} indicatorColor="primary" >
+                <Tab label="Add a Criminal" value="1" sx={{color:'#FFFFFF'}}/>
+                <Tab label="Track a Criminal" value="2" sx={{color:'#FFFFFF'}}/>
+              </TabList>
+            </Box>
+
+            <TabPanel value="1" sx={{py:0}}>
+              <AddCriminalForm handleClose={handleClose}/>
+            </TabPanel>
+
+            <TabPanel value="2" sx={{py:0}}>
+              <TrackCriminal />
+            </TabPanel>
+          </TabContext>
         </Box>
       </Popover>
     </>

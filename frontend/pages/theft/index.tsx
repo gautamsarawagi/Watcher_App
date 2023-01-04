@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import HomeStyles from "../../styles/Home.module.css"
 import Box from "@mui/material/Box";
-import TheftDetectionLayout from "../../layout/TheftDetectionLayout";
+import ModelLayout from '../../layout/ModelLayout';
 
 function Theft_detection() {
   return (
@@ -16,7 +16,9 @@ function Theft_detection() {
 
       <Box className={HomeStyles.body}>
 
-      <TheftDetectionLayout></TheftDetectionLayout>
+      <ModelLayout>
+        
+      </ModelLayout>
 
       </Box>
     </>

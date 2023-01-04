@@ -13,7 +13,6 @@ function CriminalDescription() {
 
   const imagesrc = router?.query?.image?.replace(/[{()}]/g, "");
   
-  console.log(router?.query?.image)
   const [imageFounded, setImageFounded] = useState(false);
 
   return (

@@ -84,6 +84,7 @@ const CriminalFaceDetection = () => {
             rowGap={"32px"}
           >
             <Webcam
+            screenshotFormat="image/jpeg"
               audio={false}
               ref={webcam}
               videoConstraints={videoConstraints}

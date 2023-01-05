@@ -1,19 +1,19 @@
 export const headerLinks =  [
     {
         name:"Home",
-        path:"/"
+        path:"/#Home"
     },
     {
         name:"About Us",
-        path:"/about"
+        path:"/#AboutUs"
     },
     {
         name:"Products",
-        path:"/product"
+        path:"/#Products"
     },
     {
         name:"Contact",
-        path:"/contact"
+        path:"/#ContactUs"
     }
 ]
 

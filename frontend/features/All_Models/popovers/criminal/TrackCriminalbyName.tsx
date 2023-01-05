@@ -17,15 +17,34 @@ function TrackCriminalbyName() {
     const [openTooltip,setOpenTooltip] = useState(false)
     const [tooltipMsg,setTooltipMsg] = useState({})
 
+    const [criminalData,setCriminalData] = useState<any[]>([])
+
     const viewdatainmap = async () => {
         const result = await axios
         .get(`http://127.0.0.1:8000/criminal/${criminalName}`)
         .then((res) => {
           setTooltipMsg(res.data)
           setOpenTooltip(true)
+          setCriminalData(res.data.data);
         })
         .catch((err) => console.log(err))
     }
+
+    useEffect(() => {
+      if(criminalData?.length == 1){
+        router.push(
+          {
+            pathname: "/vehicle/LocationMap",
+            query: {
+              latitude: criminalData[0]?.latitude,
+              longitude: criminalData[0]?.longitude,
+            },
+          },
+        );
+
+      }
+    }, [criminalData,router])
+    
 
   return (
     <>

@@ -20,7 +20,7 @@ function Watcher({}: Props) {
         rowGap={"56px"}
         mt={"220px"}
       >
-        <Grid xs={6}>
+        <Grid xs={6} px={2}>
           <Box sx={{ maxWidth: "608px" }}>
             <Typography
               fontFamily={"Poppins"}
@@ -33,7 +33,7 @@ function Watcher({}: Props) {
               What is <span style={{ color: "#008DFF" }}>WATCHER</span>
             </Typography>
           </Box>
-          <Box sx={{ marginTop: "56px" }}>
+          <Box sx={{ marginTop: "56px" }} px={3}>
             <Typography
               fontFamily={"Poppins"}
               fontStyle={"Medium"}
@@ -69,5 +69,3 @@ function Watcher({}: Props) {
 }
 
 export default Watcher;
-
-// What is WATCHER

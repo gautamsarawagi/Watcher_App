@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
@@ -14,12 +14,15 @@ function CriminalPopover({
   anchorEl,
   setAnchorEl,
   id,
+  lat,
+  lng
 }: {
   anchorEl: any;
   setAnchorEl: any;
   id: any;
+  lat:any;
+  lng:any
 }) {
-
   const open = Boolean(anchorEl);
 
   const handleClose = () => {
@@ -53,8 +56,8 @@ function CriminalPopover({
           left: 66,
         }}
       >
-        <Box sx={{ background: "#202126",width: "529px",height:'100vh' }}>
-        <TabContext value={value}>
+        <Box sx={{ background: "#202126", width: "529px", height: "105vh" }}>
+          <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <Box
                 sx={{
@@ -103,17 +106,25 @@ function CriminalPopover({
                   Track Criminal
                 </Typography>
               </Box>
-              <TabList onChange={handleChange} indicatorColor="primary" >
-                <Tab label="Add a Criminal" value="1" sx={{color:'#FFFFFF'}}/>
-                <Tab label="Track a Criminal" value="2" sx={{color:'#FFFFFF'}}/>
+              <TabList onChange={handleChange} indicatorColor="primary">
+                <Tab
+                  label="Add a Criminal"
+                  value="1"
+                  sx={{ color: "#FFFFFF" }}
+                />
+                <Tab
+                  label="Track a Criminal"
+                  value="2"
+                  sx={{ color: "#FFFFFF" }}
+                />
               </TabList>
             </Box>
 
-            <TabPanel value="1" sx={{py:0}}>
-              <AddCriminalForm handleClose={handleClose}/>
+            <TabPanel value="1" sx={{ py: 0 }}>
+              <AddCriminalForm lat={lat} lng={lng}/>
             </TabPanel>
 
-            <TabPanel value="2" sx={{py:0}}>
+            <TabPanel value="2" sx={{ py: 0 }}>
               <TrackCriminal />
             </TabPanel>
           </TabContext>

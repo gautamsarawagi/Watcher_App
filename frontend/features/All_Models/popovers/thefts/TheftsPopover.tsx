@@ -63,7 +63,7 @@ function TheftsPopover({
           left: 66,
         }}
       >
-        <Box sx={{ background: "#202126", height: "100vh" }}>
+        <Box sx={{ background: "#202126", height: "105vh" }}>
           <Box
             sx={{
               display: "flex",

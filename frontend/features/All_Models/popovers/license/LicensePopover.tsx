@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Popover from "@mui/material/Popover";
 import Box from "@mui/material/Box";
@@ -15,10 +15,14 @@ function LicensePopover({
   anchorEl,
   setAnchorEl,
   id,
+  lat,
+  lng
 }: {
   anchorEl: any;
   setAnchorEl: any;
   id: any;
+  lat:any;
+  lng:any
 }) {
   const open = Boolean(anchorEl);
 
@@ -31,6 +35,8 @@ function LicensePopover({
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+
 
   return (
     <>
@@ -53,7 +59,7 @@ function LicensePopover({
           left: 66,
         }}
       >
-        <Box sx={{ background: "#202126", width: "529px",height:'100vh' }}>
+        <Box sx={{ background: "#202126", width: "529px",height:'105vh' }}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
               <Box
@@ -110,7 +116,7 @@ function LicensePopover({
             </Box>
 
             <TabPanel value="1" sx={{py:0}}>
-              <LicenseAddFrom handleClose={handleClose} />
+              <LicenseAddFrom lat={lat} lng={lng} />
             </TabPanel>
 
             <TabPanel value="2" sx={{py:0}}>

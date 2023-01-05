@@ -8,7 +8,7 @@ import { Container } from "@mui/material";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme}>
-      {/* 
+      {/*   
         CssBaseline adds Normalize CSS. It makes page to follow mui. 
         It adds CSS properties like "box-sizing: border-box" and "margin : 0"
         */}

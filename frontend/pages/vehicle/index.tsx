@@ -15,11 +15,9 @@ function Vehicle_testing() {
         <meta name="viewport" content="width=1200, minimum-scale=0.25" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-     <Box className={HomeStyles.body}>
      <ModelLayout>
-        {/* <LocationMap/> */}
+        <LocationMap/>
       </ModelLayout>
-     </Box>
       
     </>
   )

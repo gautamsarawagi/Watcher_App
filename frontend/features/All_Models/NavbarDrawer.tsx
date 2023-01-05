@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from "react";
+import React, { useState, MouseEvent, useEffect } from "react";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 
@@ -92,6 +92,28 @@ function NavbarDrawer() {
     });
   };
 
+  const [lat, setLat] = useState(0);
+  const [lng, setLng] = useState(0);
+  const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    if (!navigator.geolocation) {
+      setStatus("Geolocation is not supported by your browser");
+    } else {
+      setStatus("Locating...");
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setStatus("");
+          setLat(position.coords.latitude);
+          setLng(position.coords.longitude);
+        },
+        () => {
+          setStatus("Unable to retrieve your location");
+        }
+      );
+    }
+  }, []);
+
   return (
     <>
       <Drawer variant="permanent" open={open}>
@@ -181,12 +203,16 @@ function NavbarDrawer() {
             anchorEl={anchorEl}
             setAnchorEl={setAnchorEl}
             id={id_popover}
+            lat={lat} 
+            lng={lng}
           />
         ) : activeTab == "Track Criminal" ? (
           <CriminalPopover
             anchorEl={anchorEl}
             setAnchorEl={setAnchorEl}
             id={id_popover}
+            lat={lat} 
+            lng={lng}
           />
         ) : activeTab == "Track Thefts" ? (
           <TheftsPopover

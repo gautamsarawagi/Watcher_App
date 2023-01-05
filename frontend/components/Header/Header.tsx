@@ -30,7 +30,8 @@ function Header() {
             {headerLinks.map((item,index) => {
               return (
                 <>
-               <Typography
+                <a href={item.path}>
+                <Typography
                     fontFamily={"Poppins"}
                     fontStyle={"SemiBold"}
                     fontWeight={"400"}
@@ -42,6 +43,8 @@ function Header() {
                   >
                     {item.name}
                   </Typography>
+                </a>
+               
                 </>
               )
             })}

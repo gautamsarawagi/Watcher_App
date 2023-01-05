@@ -1,4 +1,3 @@
-from bson import ObjectId
 from fastapi import APIRouter
 from config.database import collection_name
 from models.license_model import License

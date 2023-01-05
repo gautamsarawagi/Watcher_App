@@ -36,11 +36,13 @@ function LocationMap() {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/dark-v11",
-      center:  [81.4294,21.2129],
+      center:  [91.73623650000002,26.1445169],
       zoom: 10,
     });
 
     map.on("load", function () {
+
+      map.resize();
       // Add an image to use as a custom marker
       map.loadImage(
         "https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png",

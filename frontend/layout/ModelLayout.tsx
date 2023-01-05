@@ -1,5 +1,6 @@
+import CssBaseline from "@mui/material/CssBaseline";
 import { Container, Stack, Box } from "@mui/system";
-import { ReactNode, useState } from "react";
+import { ReactNode, SetStateAction, useState } from "react";
 import NavbarDrawer from "../features/All_Models/NavbarDrawer";
 
 type Props = {
@@ -7,16 +8,25 @@ type Props = {
 };
 
 function ModelLayout({ children }: Props) {
-  const [data,setData] = useState()
+
   return (
     <>
       <Stack>
-          <Box sx={{ display: "flex" }}>
-            <NavbarDrawer />
-            <Container maxWidth="xl">
-              <Stack>{children}</Stack>
-            </Container>
+        <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+          <NavbarDrawer/>
+          <Box
+            component="main"
+            sx={{
+              flexGrow: 1,
+              p: 0,
+              width: { sm: `calc(100% - 200px)` },
+              height:'100%'
+            }}
+          >
+            {children}
           </Box>
+        </Box>
       </Stack>
     </>
   );

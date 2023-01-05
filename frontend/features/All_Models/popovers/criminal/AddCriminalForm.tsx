@@ -7,8 +7,9 @@ import TextField from "@mui/material/TextField";
 import CloseIcon from "@mui/icons-material/Close";
 import add_image from "../../../../assets/add_image.png";
 import axios from "axios";
+import MessageTooltip from "../../../MessageTooltip";
 
-function AddCriminalForm({handleClose}: {handleClose:any}) {
+function AddCriminalForm({lat,lng} : {lat:any,lng:any}) {
   const [file, setFile] = useState<any>(null);
   const [filePreview, setFilePreview] = useState<any>(null);
 
@@ -16,8 +17,8 @@ function AddCriminalForm({handleClose}: {handleClose:any}) {
     criminal_name: "",
     age: "",
     image: "",
-    latitude: "21.2129",
-    longitude: "81.4294",
+    latitude: lat,
+    longitude: lng,
   });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -48,6 +49,9 @@ function AddCriminalForm({handleClose}: {handleClose:any}) {
       setCriminalForm({ ...criminalForm, [e.target.name]: e.target.value });
   };
 
+  const [openTooltip,setOpenTooltip] = useState(false)
+  const [tooltipMsg,setTooltipMsg] = useState({})
+
   const uploadCriminal = async () => {
     const result = await axios
       .post(`http://127.0.0.1:8000/criminal`, {
@@ -60,7 +64,9 @@ function AddCriminalForm({handleClose}: {handleClose:any}) {
       .then((res) => {
         console.log(res);
       });
-    handleClose()
+
+    setOpenTooltip(true)
+    setTooltipMsg({Status: "success",msg:"Criminal Added Successfully"})
   };
 
   return (
@@ -250,6 +256,9 @@ function AddCriminalForm({handleClose}: {handleClose:any}) {
           </Typography>
         </Button>
       </Box>
+
+      <MessageTooltip openTooltip = {openTooltip} setOpenTooltip={setOpenTooltip} message={tooltipMsg}/>
+
     </>
   );
 }

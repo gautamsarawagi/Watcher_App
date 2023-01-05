@@ -1,4 +1,4 @@
-import {useRef} from 'react';
+import { useRef, useState } from "react";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import BaseLayout from "../layout/BaseLayout";
@@ -13,22 +13,27 @@ import Contact from "../features/Main/Contact";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  
   return (
     <>
       <Head>
         <title>Watcher App | Home </title>
         <meta name="description" content="Watcher Police help Web App" />
         <meta name="viewport" content="width=1200, minimum-scale=0.25" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <Box className={HomeStyles.body}>
         <BaseLayout>
           <Headline />
-          <HeroComponent/>
-          <Watcher />
-          <Tracks/>
-          <Contact/>
+          <HeroComponent />
+          <div id="AboutUs">
+            <Watcher />
+          </div>
+          <div id="Products">
+            <Tracks />
+          </div>
+          <div id="ContactUs">
+            <Contact />
+          </div>
         </BaseLayout>
       </Box>
     </>

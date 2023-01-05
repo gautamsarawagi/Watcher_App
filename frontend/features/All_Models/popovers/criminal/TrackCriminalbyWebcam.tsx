@@ -6,11 +6,17 @@ import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import Webcam from "react-webcam";
 import axios from "axios"
 import MessageTooltip from "../../../MessageTooltip";
+import { useRouter } from "next/router";
 
 function TrackCriminalbyWebcam() {
+
+  const router = useRouter()
   const [allowCamera, setAllowCamera] = useState(false);
   const [criminalName, setCriminalName] = useState("Undefined")
-
+  const [criminalData,setCriminalData] = useState({
+    data: {},
+    imageCaptured: ""
+  })
   // camera functions
 
   const webcam = useRef<Webcam>(null);
@@ -28,8 +34,8 @@ function TrackCriminalbyWebcam() {
 
   const capture = () => {
     const pictureScreenshot = webcam?.current?.getScreenshot();
-    {
-      pictureScreenshot ? setPicture(pictureScreenshot) : null;
+    if(pictureScreenshot){
+      setPicture(pictureScreenshot) 
     }
 
     setCriminalName("Loading...");
@@ -49,6 +55,19 @@ function TrackCriminalbyWebcam() {
         setOpenTooltip(true)
         if(res.data.data){
           setCriminalName(res?.data?.data?.criminal_name)
+          // sendDatatoParent()
+          router.push(
+          {
+            pathname: "/criminal/CriminalDescription",
+            query:{
+              imageCaptured: picture,
+              imageMatched: res.data.data.image,
+              name: res.data.data.criminal_name,
+              age: res.data.data.age
+            }
+          },
+          "/criminal/CriminalDescription"
+          )
         }else{
           setCriminalName("Not Found")
         }
@@ -59,7 +78,7 @@ function TrackCriminalbyWebcam() {
         console.log("AXIOS ERROR: ", err);
       })
     }
-  }, [picture])  
+  }, [criminalData, picture, router])  
 
   return (
     <>

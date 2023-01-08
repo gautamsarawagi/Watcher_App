@@ -89,7 +89,7 @@ const defaultTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Rubik", "Playfair Display", "sans-serif"].join(","),
+    fontFamily: ["Open Sans", "sans-serif"].join(","),
     fontSize: 14,
     allVariants: {
       lineHeight: 1.3,

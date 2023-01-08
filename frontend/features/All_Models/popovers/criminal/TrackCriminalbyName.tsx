@@ -49,7 +49,7 @@ function TrackCriminalbyName() {
   return (
     <>
     <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"SemiBold"}
         fontSize={"40px"}
         lineHeight={"48px"}
@@ -61,7 +61,7 @@ function TrackCriminalbyName() {
       </Typography>
 
       <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"Regular"}
         fontSize={"20px"}
         lineHeight={"24px"}
@@ -108,7 +108,7 @@ function TrackCriminalbyName() {
         onClick={viewdatainmap}
       >
         <Typography
-          fontFamily={"Inter"}
+          fontFamily={"Poppins"}
           fontStyle={"SemiBold"}
           fontWeight={"600"}
           fontSize={"20px"}

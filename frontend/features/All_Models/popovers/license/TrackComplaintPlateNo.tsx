@@ -47,7 +47,7 @@ function TrackComplaintPlateNo() {
   return (
     <>
       <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"SemiBold"}
         fontSize={"40px"}
         lineHeight={"48px"}
@@ -59,7 +59,7 @@ function TrackComplaintPlateNo() {
       </Typography>
 
       <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"Regular"}
         fontSize={"20px"}
         lineHeight={"24px"}
@@ -106,7 +106,7 @@ function TrackComplaintPlateNo() {
         onClick={viewdatainmap}
       >
         <Typography
-          fontFamily={"Inter"}
+          fontFamily={"Poppins"}
           fontStyle={"SemiBold"}
           fontWeight={"600"}
           fontSize={"20px"}

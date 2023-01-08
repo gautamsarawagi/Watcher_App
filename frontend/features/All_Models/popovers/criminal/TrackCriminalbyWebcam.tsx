@@ -83,7 +83,7 @@ function TrackCriminalbyWebcam() {
   return (
     <>
       <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"SemiBold"}
         fontWeight={"600"}
         fontSize={"32px"}
@@ -94,7 +94,7 @@ function TrackCriminalbyWebcam() {
       </Typography>
 
       <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"Regular"}
         fontSize={"20px"}
         lineHeight={"24px"}
@@ -106,7 +106,7 @@ function TrackCriminalbyWebcam() {
       </Typography>
 
       <Typography
-        fontFamily={"Inter"}
+        fontFamily={"Poppins"}
         fontStyle={"SemiBold"}
         fontWeight={"600"}
         fontSize={"28px"}
@@ -155,7 +155,7 @@ function TrackCriminalbyWebcam() {
             onClick={openWebCam}
           >
             <Typography
-              fontFamily={"Inter"}
+              fontFamily={"Poppins"}
               fontStyle={"SemiBold"}
               fontWeight={"600"}
               fontSize={"20px"}
@@ -196,7 +196,7 @@ function TrackCriminalbyWebcam() {
             onClick={capture}
           >
             <Typography
-              fontFamily={"Inter"}
+              fontFamily={"Poppins"}
               fontStyle={"SemiBold"}
               fontWeight={"600"}
               fontSize={"20px"}

@@ -32,8 +32,8 @@ function Headline({}: Props) {
   return (
     <>
       <Typography
-        fontFamily={"Poppins"}
-        fontStyle={"normal"}
+        // fontFamily={"Poppins"}
+        fontStyle={"Bold"}
         fontWeight={"700"}
         fontSize={"96px"}
         lineHeight={"144px"}
@@ -44,7 +44,7 @@ function Headline({}: Props) {
       </Typography>
 
       <Typography
-        fontFamily={"Poppins"}
+        // fontFamily={"Poppins"}
         fontStyle={"normal"}
         fontWeight={"500"}
         fontSize={"24px"}

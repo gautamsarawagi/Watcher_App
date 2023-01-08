@@ -129,7 +129,7 @@ function LoginModal() {
           onClick={loginHandler}
         >
           <Typography
-            fontFamily={"Inter"}
+            fontFamily={"Poppins"}
             fontStyle={"SemiBold"}
             fontWeight={"600"}
             fontSize={"20px"}

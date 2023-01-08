@@ -55,13 +55,16 @@ async def get_image():
 @image_api_router.post("/image_match")
 async def post_image(image:Criminal_Check):
     if face_rec(image.image) != "Unmatched":
-        criminal = criminal_searilizer(second_collection_name.find_one({"image": face_rec(image.image)}))
-        msgClient.messages.create(
-            body= f"Criminal: {criminal['criminal_name']} has been found at latitude: {criminal['latitude']} and longitude: {criminal['longitude']}.",
+        criminal = criminal_searilizer(second_collection_name.find({"image": face_rec(image.image)}))
+        if criminal:
+            msgClient.messages.create(
+            body= f"Criminal: {criminal[0]['criminal_name']} has been found at latitude: {criminal[0]['latitude']} and longitude: {criminal[0]['longitude']}.",
             from_="+19298224131",
             to="+919301912689"
-        )
-        return {"Status":"success","msg" : "Criminal Founded Successfully","data": criminal}
+            )
+            return {"Status":"success","msg" : "Criminal Founded Successfully","data": criminal}
+        else:
+            return {"Status":"error","msg": "No Criminal Found!!"}
     else:
         return {"Status":"error","msg": "No Criminal Found!!"}
 

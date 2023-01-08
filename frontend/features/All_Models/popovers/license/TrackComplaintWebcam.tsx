@@ -55,10 +55,11 @@ function TrackComplaintWebcam() {
       .then((res) => {
         setOpenTooltip(true)
         if(res.data.results[0]){
-          setResponse({"Status":"success","msg": "license plate detected"})
         setLicenseNumber(res?.data?.results[0]?.plate)
+        axios.get(`http://127.0.0.1:8000/send-message/${res?.data?.results[0]?.plate}`).then((sms_res)=> {
+          setResponse(sms_res.data)
+        })
         }else{
-          setResponse({"Status":"error","msg": "license plate not detected"})
         setLicenseNumber("Not Found")
         }
       })
@@ -196,7 +197,7 @@ function TrackComplaintWebcam() {
           </Button>
         </Box>
       )}
-
+      
       <MessageTooltip openTooltip = {openTooltip} setOpenTooltip={setOpenTooltip} message={response}/>
     </>
   );

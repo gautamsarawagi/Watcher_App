@@ -3,6 +3,7 @@ import Head from "next/head";
 import HomeStyles from "../../styles/Home.module.css"
 import Box from "@mui/material/Box";
 import ModelLayout from '../../layout/ModelLayout';
+import LocationMap from "../vehicle/LocationMap";
 
 function Theft_detection() {
   return (
@@ -17,7 +18,7 @@ function Theft_detection() {
       <Box className={HomeStyles.body}>
 
       <ModelLayout>
-        
+        <LocationMap/>
       </ModelLayout>
 
       </Box>

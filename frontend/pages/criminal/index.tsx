@@ -3,7 +3,7 @@ import Head from "next/head";
 import ModelLayout from "../../layout/ModelLayout";
 import HomeStyles from "../../styles/Home.module.css";
 import Box from "@mui/material/Box";
-import CriminalDescription from "./CriminalDescription";
+import LocationMap from "../vehicle/LocationMap";
 
 function Criminal_detection() {
   return (
@@ -17,7 +17,7 @@ function Criminal_detection() {
 
       <Box className={HomeStyles.body}>
         <ModelLayout>
-          {/* <CriminalDescription/> */}
+          <LocationMap/>
         </ModelLayout>
       </Box>
     </>

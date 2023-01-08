@@ -219,6 +219,7 @@ function NavbarDrawer() {
             anchorEl={anchorEl}
             setAnchorEl={setAnchorEl}
             id={id_popover}
+            setActiveTab={setActiveTab}
           />
         ) : null}
       </Box>

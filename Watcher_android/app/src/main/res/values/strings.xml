@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Watcher</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="access_token">pk.eyJ1IjoiZGV2bWFwLTIwMjMiLCJhIjoiY2xjMTlpbDF5M2twcTN3a2UzbnlyNjk5NCJ9.Y64yQ9lZoOdpvb9HXFR_3w</string>
+
+    <string name="start_navigation">Start Navigation</string>
+    <string name="navigation_day_guide">navigation_day_guide</string>
+
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+</resources>

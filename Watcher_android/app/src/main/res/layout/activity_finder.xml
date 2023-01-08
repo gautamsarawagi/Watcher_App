@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui"
+    tools:context=".FinderActivity">
+
+    <include layout="@layout/track_toolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/plate_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="--------------------------------------------------------------------------------"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10sdp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/card_design"
+            android:padding="@dimen/_19sdp">
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Complaint Id :"
+                android:textColor="@color/login_btn"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/c_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:text="24AC"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id"
+                android:text="Description : "
+                android:textColor="@color/login_btn"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_des"
+                android:layout_width="@dimen/_85sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/c_id"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:text="4 wheeler,AS21E34,A.Sharma"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginLeft="@dimen/_200sdp"
+                android:src="@drawable/car" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: "
+                android:layout_below="@+id/des"
+                android:textColor="@color/login_btn"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_des"
+                android:text="Case Register"
+                android:textStyle="bold"
+                android:textColor="#32FA04"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_70sdp"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
+        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_500sdp"
+        android:layout_below="@+id/track_box"
+        android:background="@drawable/login_btn"
+        android:id="@+id/complaint_add">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/login_btn"
+            android:text="Add a Complaint"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_bar"
+        app:backgroundTint="@color/ui"
+        android:layout_gravity="bottom"
+        android:background="@drawable/round_circlr">
+
+        <ImageView
+            android:id="@+id/complaint"
+            android:layout_marginLeft="@dimen/_100sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/group"
+            />
+
+
+        <ImageView
+            android:id="@+id/tracker"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:src="@drawable/vector_color"
+            />
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="--------------------------------------------------------------------------------"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/_39sdp"
+        android:textSize="@dimen/_10sdp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

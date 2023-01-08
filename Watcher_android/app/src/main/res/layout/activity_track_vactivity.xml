@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui"
+    tools:context=".TrackV_Activity">
+
+    <include layout="@layout/track_toolbar"/>
+
+    <RelativeLayout
+        android:id="@+id/plate_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="--------------------------------------------------------------------------------"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/welcome_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Track V"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_30sdp"/>
+
+        <TextView
+            android:id="@+id/tagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/welcome_txt"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:textSize="@dimen/_13sdp"
+            android:text="For Using map Feature please use the following license plate : AS04B1234"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tagline"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:id="@+id/license">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/license_number"
+                android:hint="🔑 Enter license plate"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:background="@drawable/round_circlr"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/license"
+            android:background="@drawable/login_btn"
+            android:id="@+id/map_btn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/login_btn"
+                android:text="View in map"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/_240sdp">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="@dimen/_10sdp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/cctv_txt"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="CCTV Cam Feature"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textStyle="bold"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:textSize="@dimen/_30sdp"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tagline2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/cctv_txt"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:layout_marginLeft="@dimen/_20sdp"-->
+<!--            android:textSize="@dimen/_13sdp"-->
+<!--            android:text="To test our Camera Feature (Which will be going to use in CCTV cameras"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tagline3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/tagline2"-->
+<!--            android:textColor="@color/login_btn"-->
+<!--            android:layout_marginLeft="@dimen/_20sdp"-->
+<!--            android:textSize="@dimen/_13sdp"-->
+<!--            android:text="License Plate : ASCD1234"/>-->
+
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_below="@id/tagline3"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <TextureView-->
+<!--                android:id="@+id/texture_view"-->
+<!--                android:layout_marginLeft="@dimen/_30sdp"-->
+<!--                android:layout_width="@dimen/_240sdp"-->
+<!--                android:layout_height="@dimen/_200sdp"/>-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_40sdp"-->
+<!--                android:layout_marginLeft="@dimen/_30sdp"-->
+<!--                android:layout_marginRight="@dimen/_30sdp"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:layout_below="@+id/texture_view"-->
+<!--                android:background="@drawable/login_btn"-->
+<!--                android:id="@+id/capture_btn">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/take_pic"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Capture"-->
+<!--                    android:background="@drawable/login_btn"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_marginStart="@dimen/_8sdp"-->
+<!--                    android:textSize="@dimen/_16sdp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_centerInParent="true"/>-->
+
+
+<!--            </RelativeLayout>-->
+
+<!--        </RelativeLayout>-->
+
+
+
+<!--    </RelativeLayout>-->
+
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_bar"
+        mapbox:backgroundTint="@color/ui"
+        android:layout_gravity="bottom"
+        android:background="@drawable/round_circlr">
+
+        <ImageView
+            android:id="@+id/track_v"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+             android:src="@drawable/car_color"
+            />
+
+        <ImageView
+            android:id="@+id/track_c"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/man"
+            />
+
+
+        <ImageView
+            android:id="@+id/track_t"
+            android:layout_marginLeft="@dimen/_70sdp"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/shield"
+            />
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="--------------------------------------------------------------------------------"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/_39sdp"
+        android:textSize="@dimen/_10sdp"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="@dimen/_10sdp"
+        android:visibility="gone"/>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

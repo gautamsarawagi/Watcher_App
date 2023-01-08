@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui"
+    tools:context=".Profile_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/_50sdp"-->
+<!--            android:layout_height="@dimen/_35sdp"-->
+<!--            android:layout_marginStart="@dimen/_8sdp"-->
+<!--            android:src="@drawable/ic_back"/>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:background="@color/black">
+
+            <ImageView
+                android:id="@+id/profile_img"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_add_photo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_welcome"
+                android:hint="Loading......."
+                android:background="@color/ui"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_below="@+id/profile_img"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColor="@color/login_btn"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:background="@drawable/card_design">
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@color/white"
+                android:hint="Loading........"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+
+                android:textColor="@color/login_btn"/>
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:hint="Loading........"
+                android:textSize="@dimen/_20sdp"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/login_btn"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Update Profile"
+                android:textSize="@dimen/_20sdp"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/login_btn"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Settings"
+                android:textSize="@dimen/_20sdp"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/login_btn"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Change Password"
+                android:textSize="@dimen/_20sdp"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/login_btn"/>
+
+            <TextView
+                android:id="@+id/log_out"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="Logout"
+                android:textSize="@dimen/_20sdp"
+                android:background="@color/white"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/login_btn"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:elevation="@dimen/_10sdp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

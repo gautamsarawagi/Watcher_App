@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "755819061021",
+    "firebase_url": "https://watcher-1cbc9-default-rtdb.firebaseio.com",
+    "project_id": "watcher-1cbc9",
+    "storage_bucket": "watcher-1cbc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755819061021:android:1fe56313c77dd322ad0bf4",
+        "android_client_info": {
+          "package_name": "com.dev.android.watcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755819061021-t216qir6sci919qfkl3606uc7hp82495.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAysAtuXxDUvJnmiFeld-Tx8SSVPZIk3MM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755819061021-t216qir6sci919qfkl3606uc7hp82495.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

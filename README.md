@@ -7,10 +7,9 @@ This app and web has been submitted as a part of the final presentation given by
 
 View our [Final's Presenation](https://www.canva.com/design/DAFVjz4LGfA/YdlMV9HC5rp3eWnXbwPpww/view?utm_content=DAFVjz4LGfA&utm_campaign=designshare&utm_medium=link&utm_source=publishpresent) here.
 
-<h3> Setting Up the Project </h3>
-
 #### Police and Consumer can uses this app : [Apk Link](https://drive.google.com/drive/folders/1EAJTpRgt-Ei3RTEetoVL_SdlaQiG4MFt?usp=sharing)
 
+<h3> Setting Up the Project </h3>
 
 <h4>1. Web</h4>
 

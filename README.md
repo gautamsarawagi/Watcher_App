@@ -24,7 +24,8 @@ For running the application in your local web server:
 
 <h4>2. Android</h4>
 
-#### <i>For login purposes use the id : patar1447@gmail.com and password : <ins>12345678</ins></i>
+#### For Police  Authentication :  <i>For login purposes use the id : patar1447@gmail.com and password : <ins>12345678</ins></i>
+#### For Consumer  Authentication : <i>For login purposes use the id : patardevajit6@gmail.com and password : <ins>12345678</ins></i>
 
 For running the application in your local web server:
 * You need to have firebase,android studio,JDK,android sdk 32.
